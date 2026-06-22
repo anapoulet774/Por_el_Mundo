@@ -1,9 +1,8 @@
-/* Variables basadas en la Guía de Estilos "Aire de Bosque" */
 :root {
-    --fondo-principal: #D5E4CF; /* Verde menta pálido */
-    --color-primario: #499C70;  /* Verde bosque medio */
-    --accion-contraste: #024053; /* Azul petróleo profundo */
-    --interaccion-hover: #136B69; /* Verde azulado */
+    --fondo-principal: #D5E4CF; 
+    --color-primario: #499C70; 
+    --accion-contraste: #024053; 
+    --interaccion-hover: #136B69; 
     --fuente-titulos: 'Libre Baskerville', serif;
     --fuente-cuerpo: 'Caudex', serif;
 }
@@ -34,7 +33,7 @@ h1 {
     text-align: center;
 }
 
-/* Diseño Mobile-First: 1 columna por defecto */
+
 .contenedor-login {
     background-color: #ffffff;
     padding: 30px;
@@ -58,7 +57,7 @@ label {
     color: var(--accion-contraste);
 }
 
-/* Comportamiento de inputs de la guía */
+
 input {
     padding: 12px;
     border: 2px solid var(--color-primario);
@@ -107,7 +106,6 @@ button:hover {
     color: var(--accion-contraste);
 }
 
-/* Media Query para pantallas más grandes (Responsive) */
 @media (min-width: 768px) {
     .contenedor-login {
         padding: 40px;

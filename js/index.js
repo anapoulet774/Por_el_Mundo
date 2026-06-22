@@ -4,7 +4,7 @@ const dniUsuario = localStorage.getItem("dniUsuario");
 
 if (btnIngreso && logueado === "true") {
     btnIngreso.textContent = "Perfil";
-    btnIngreso.href = "perfil.html"; // o ingreso.html si todavía no tenés perfil
+    btnIngreso.href = "perfil.html"; 
 }
 
 const formBuscador = document.getElementById("formBuscador");
