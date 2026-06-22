@@ -18,44 +18,112 @@ actualizarTiempo();
 function validarNumeros(evento) {
     const input = evento.target;
     input.value = input.value.replace(/\D/g, '');
-    
-    const errorMsg = document.getElementById('cuit-error');
-    if (input.value.length > 0 && input.value.length < 11) {
-        errorMsg.style.display = 'block';
-    } else {
-        errorMsg.style.display = 'none';
-    }
+
+    validarCampoCuit();
 }
 
+function mostrarError(idError, mensaje) {
+    const error = document.getElementById(idError);
+    error.textContent = mensaje;
+    error.style.display = 'block';
+}
+
+function ocultarError(idError) {
+    const error = document.getElementById(idError);
+    error.textContent = '';
+    error.style.display = 'none';
+}
+
+function validarCampoNombre() {
+    const nombre = document.getElementById('nombre').value.trim();
+
+    if (nombre === '') {
+        mostrarError('nombre-error', 'El nombre no puede estar vacío.');
+        return false;
+    }
+
+    ocultarError('nombre-error');
+    return true;
+}
+
+function validarCampoApellido() {
+    const apellido = document.getElementById('apellido').value.trim();
+
+    if (apellido === '') {
+        mostrarError('apellido-error', 'El apellido no puede estar vacío.');
+        return false;
+    }
+
+    ocultarError('apellido-error');
+    return true;
+}
+
+function validarCampoCuit() {
+    const cuit = document.getElementById('cuit').value.trim();
+
+    if (cuit === '') {
+        mostrarError('cuit-error', 'El CUIT no puede estar vacío.');
+        return false;
+    }
+
+    if (!/^\d+$/.test(cuit)) {
+        mostrarError('cuit-error', 'El CUIT debe contener solo números.');
+        return false;
+    }
+
+    if (cuit.length !== 11) {
+        mostrarError('cuit-error', 'El CUIT debe contener exactamente 11 números.');
+        return false;
+    }
+
+    ocultarError('cuit-error');
+    return true;
+}
+
+function validarCampoCorreo() {
+    const correo = document.getElementById('correo').value.trim();
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (correo === '') {
+        mostrarError('correo-error', 'El correo electrónico no puede estar vacío.');
+        return false;
+    }
+
+    if (!regexEmail.test(correo)) {
+        mostrarError('correo-error', 'Ingrese un correo electrónico válido.');
+        return false;
+    }
+
+    ocultarError('correo-error');
+    return true;
+}
 
 function validarFormulario(evento) {
     evento.preventDefault();
-    const cuit = document.getElementById('cuit').value;
 
-    if (cuit.length !== 11) {
-        alert("Atención: El CUIT debe contener exactamente 11 dígitos numéricos.");
-        return;
+    const nombreValido = validarCampoNombre();
+    const apellidoValido = validarCampoApellido();
+    const cuitValido = validarCampoCuit();
+    const correoValido = validarCampoCorreo();
+
+    if (nombreValido && apellidoValido && cuitValido && correoValido) {
+        alert("¡Se realizó la reserva!");
+        evento.target.reset();
+        window.location.href = "index.html";
     }
-
-    alert("¡Se Realizó la reserva!");
-    window.location.href = "index.html";
-    evento.target.reset();
 }
 
 
 function calcularPaquete() {
     const destinoSelect = document.getElementById('destino');
     const precioBase = parseFloat(destinoSelect.value);
-    const pasajeros = parseInt(document.getElementById('pasajeros').value) || 1;
+    const dias = parseInt(document.getElementById('dias').value) || 1;
     
     const resultadoBox = document.getElementById('resultado-cotizacion');
 
     if (precioBase > 0) {
-        const total = precioBase;
-        
+        const total = precioBase*dias;
         resultadoBox.textContent = `Total Estimado: ${total.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}`;
-        
-        // Manipulación dinámica de estilos a través del DOM
         resultadoBox.classList.add('destacado');
     } else {
         resultadoBox.textContent = "Total Estimado: $0.00";

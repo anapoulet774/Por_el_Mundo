@@ -19,29 +19,32 @@
         <section class="card">
             <h2>Datos de Cliente</h2>
             <form id="form-vendedor" onsubmit="validarFormulario(event)">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" required>
-                </div>
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <small id="nombre-error" class="error-msg"></small>
+    </div>
+    
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" required>
+        <small id="apellido-error" class="error-msg"></small>
+    </div>
 
-                <div class="form-group">
-                    <label for="cuit">CUIT (Solo números)</label>
-                    <input type="text" id="cuit" name="cuit" oninput="validarNumeros(event)" maxlength="11" required>
-                    <small id="cuit-error" class="error-msg">El CUIT debe contener exactamente 11 números.</small>
-                </div>
+    <div class="form-group">
+        <label for="cuit">CUIT (Solo números)</label>
+        <input type="text" id="cuit" name="cuit" oninput="validarNumeros(event)" maxlength="11" required>
+        <small id="cuit-error" class="error-msg"></small>
+    </div>
 
-                <div class="form-group">
-                    <label for="correo">Correo Electrónico</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
+    <div class="form-group">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+        <small id="correo-error" class="error-msg"></small>
+    </div>
 
-                <button type="submit" class="btn-primary">Reservar</button>
-            </form>
+    <button type="submit" class="btn-primary">Reservar</button>
+    </form>
         </section>
 
         <section class="card">
@@ -50,15 +53,15 @@
                 <label for="destino">Seleccione el Destino</label>
                 <select id="destino" onchange="calcularPaquete()">
                     <option value="0">Seleccione un destino...</option>
-                    <option value="450000">Refugio en la Patagonia - $450.000</option>
-                    <option value="1200000">Arquitectura en Estocolmo - $1.200.000</option>
-                    <option value="980000">Auroras Boreales - $980.000</option>
+                    <option value="75000">Refugio en la Patagonia - $75.000 / Día</option>
+                    <option value="150000">Arquitectura en Estocolmo - $150.000 / Día</option>
+                    <option value="196000">Auroras Boreales - $196.000 / Día</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="pasajeros">Cantidad de Pasajeros</label>
-                <input type="number" id="pasajeros" name="pasajeros" min="1" max="15" value="1" oninput="calcularPaquete()">
+                <label for="dias">Cantidad de Días</label>
+                <input type="number" id="dias" name="dias" min="1" max="15" value="1" oninput="calcularPaquete()">
             </div>
 
             <div id="resultado-cotizacion" class="resultado-box">
@@ -71,6 +74,6 @@
         <p>Emisión del reporte: <span id="fecha-reporte"></span></p>
     </footer>
 
-    <script src="js/scripts.js"></script>
+    <script src="js/compra.js"></script>
 </body>
 </html>
