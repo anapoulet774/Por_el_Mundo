@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - Por el Mundo</title>
+    <link rel="stylesheet" href="style/perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caudex&family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Perfil de Usuario</h1>
+    </header>
+
+    <main class="profile-container">
+        <section class="profile-card">
+            
+            <div class="user-info">
+                <h2 id="nombreUsuario">Ana Poulet</h2>
+                <p><strong>Email:</strong> <span id="emailUsuario">anapoulet@gmail.com</span></p>
+                <p><strong>Número de teléfono:</strong> <span id="telefonoUsuario">2644596324</span></p>
+            </div>
+
+            <!-- Formulario oculto para editar -->
+            <form id="formEditarPerfil" class="form-editar" style="display: none;">
+                <label for="inputNombre">Nombre</label>
+                <input type="text" id="inputNombre">
+
+                <label for="inputEmail">Email</label>
+                <input type="email" id="inputEmail">
+
+                <label for="inputTelefono">Teléfono</label>
+                <input type="text" id="inputTelefono">
+
+                <button type="submit" class="btn-primary">Guardar cambios</button>
+                <button type="button" id="cancelarEdicion" class="btn-secondary">Cancelar</button>
+            </form>
+
+            <div class="actions">
+                <button id="btnEditarPerfil" class="btn-primary">Editar Perfil</button>
+                <button id="Logout" class="btn-secondary">Cerrar Sesión</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Agencia de Turismo "Por el Mundo"</p>
+    </footer>
+    
+    <script src="js/perfil.js"></script>
+</body>
+</html>

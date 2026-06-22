@@ -1,0 +1,118 @@
+/* Variables basadas en la Guía de Estilos "Aire de Bosque" */
+:root {
+    --fondo-principal: #D5E4CF; /* Verde menta pálido */
+    --color-primario: #499C70;  /* Verde bosque medio */
+    --accion-contraste: #024053; /* Azul petróleo profundo */
+    --interaccion-hover: #136B69; /* Verde azulado */
+    --fuente-titulos: 'Libre Baskerville', serif;
+    --fuente-cuerpo: 'Caudex', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fondo-principal);
+    font-family: var(--fuente-cuerpo);
+    color: var(--accion-contraste);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    font-family: var(--fuente-titulos);
+    color: var(--accion-contraste);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Diseño Mobile-First: 1 columna por defecto */
+.contenedor-login {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-input {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--accion-contraste);
+}
+
+/* Comportamiento de inputs de la guía */
+input {
+    padding: 12px;
+    border: 2px solid var(--color-primario);
+    border-radius: 4px;
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--interaccion-hover);
+}
+
+button {
+    background-color: var(--accion-contraste);
+    color: #ffffff;
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--interaccion-hover);
+}
+
+.mensaje-error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+.contenedor-reloj {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--accion-contraste);
+}
+
+/* Media Query para pantallas más grandes (Responsive) */
+@media (min-width: 768px) {
+    .contenedor-login {
+        padding: 40px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}

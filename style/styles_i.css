@@ -1,0 +1,298 @@
+
+* {
+    --fondo-principal: #D5E4CF; /* Verde menta pálido */
+    --color-primario: #499C70;  /* Verde bosque medio */
+    --contraste: #024053;       /* Azul petróleo profundo */
+    --interaccion-hover: #136B69; /* Verde azulado */
+    
+    --fuente-titulos: 'Libre Baskerville', serif;
+    --fuente-cuerpo: 'Caudex', serif;
+    
+    --ancho-maximo: 1000px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fondo-principal);
+    color: var(--contraste);
+    font-family: var(--fuente-cuerpo);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    color: var(--contraste);
+}
+
+a {
+    text-decoration: none;
+    color: var(--contraste);
+    transition: color 0.3s ease;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cabecera {
+    background-color: var(--fondo-principal);
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column; /* Mobile: apilado */
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column; /* Mobile: enlaces apilados */
+    gap: 15px;
+    text-align: center;
+}
+
+/* ========================================================
+   BOTONES E INTERACCIONES
+======================================================== */
+.btn-primario, .btn-accion {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-accion {
+    background-color: var(--contraste);
+}
+
+.btn-primario:hover, .btn-accion:hover {
+    background-color: var(--interaccion-hover);
+    color: #ffffff;
+}
+
+.enlace-hover:hover {
+    color: var(--interaccion-hover);
+}
+
+/* ========================================================
+   TRATAMIENTO HERO (IMAGEN + SCRIM)
+======================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Imagen de fondo simulada */
+    background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+/* El Scrim exigido por la guía de estilos */
+.scrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(2, 64, 83, 0.4), rgba(2, 64, 83, 0.7));
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-contenido h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-contenido p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Buscador Flotante */
+.buscador-flotante {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Mobile: apilado */
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(2, 64, 83, 0.2);
+}
+
+.campo-busqueda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--fondo-principal);
+    padding: 10px;
+    border-radius: 4px;
+    color: var(--contraste);
+}
+
+.campo-busqueda input {
+    border: none;
+    outline: none;
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    color: var(--contraste);
+    width: 100%;
+}
+
+/* ========================================================
+   ESTRUCTURA DE TARJETAS (CARDS)
+======================================================== */
+.seccion-principal {
+    padding: 60px 20px;
+}
+
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.encabezado-seccion h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Retícula basada en el concepto de 12 columnas (Mobile: 1 col) */
+.reticula-tarjetas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-imagen {
+    height: 200px;
+    background-color: var(--color-primario);
+    /* Fondos simulados para el ejemplo */
+    background-size: cover;
+    background-position: center;
+}
+.img-bosque { background-image: url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80'); }
+.img-vuelos { background-image: url('https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=600&q=80'); }
+.img-nieve { background-image: url('https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=600&q=80'); }
+
+.tarjeta-cuerpo {
+    padding: 20px;
+}
+
+.tarjeta-etiqueta {
+    font-size: 0.85rem;
+    color: var(--color-primario);
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tarjeta h3 {
+    margin-bottom: 10px;
+}
+
+.tarjeta-pie {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--fondo-principal);
+    padding-top: 15px;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ========================================================
+   PIE DE PÁGINA
+======================================================== */
+.pie-pagina {
+    background-color: var(--contraste);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+/* ========================================================
+   MEDIA QUERIES (DESKTOP)
+======================================================== */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .hero-contenido h1 {
+        font-size: 3.5rem;
+    }
+
+    .buscador-flotante {
+        flex-direction: row;
+        align-items: center;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    /* En pantallas grandes, las tarjetas ocupan 1/3 del espacio (3 columnas) */
+    .reticula-tarjetas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por el Mundo | Agencia de Turismo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="style/styles_i.css">
+</head>
+<body>
+
+    <header class="cabecera">
+        <div class="contenedor navbar">
+            <div class="logo">
+                <i class="bi bi-tree marca-icono"></i>
+                <span class="marca-texto">Por el Mundo</span>
+            </div>
+            <nav class="menu">
+                <a href="#">Destinos</a>
+                <a href="#">Paquetes</a>
+                <a href="#">Sucursales</a>
+                <a href="ingreso.html" class="btn-primario" id="btnIngreso">Ingresar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="scrim"></div>
+        <div class="contenedor hero-contenido">
+            <h1>Respira naturaleza</h1>
+            <p>Planificá tu próximo viaje con la calma que te merecés. Descubrí destinos mágicos y exóticos.</p>
+            
+            <form class="buscador-flotante" id="formBuscador">
+              <div class="campo-busqueda">
+                <i class="bi bi-geo-alt"></i>
+                  <input type="text" id="inputDestino" placeholder="¿A dónde querés ir?">
+              </div>
+
+              <div class="campo-busqueda">
+                <i class="bi bi-calendar-week"></i>
+                  <input type="date">
+              </div>
+
+        <button type="submit" class="btn-accion">Explorar Destinos</button>
+          
+            </form>
+        </div>
+    </section>
+
+    <main class="contenedor seccion-principal">
+        <div class="encabezado-seccion">
+            <h2>Experiencias Destacadas</h2>
+            <p>Conectá con el entorno natural en nuestras propuestas de ecoturismo.</p>
+        </div>
+
+    <div class="reticula-tarjetas">
+      <article class="tarjeta" id="cardPatagonia">
+            <div class="tarjeta-imagen img-bosque"></div>
+            <div class="tarjeta-cuerpo">
+            <div class="tarjeta-etiqueta"><i class="bi bi-tree"></i> Bosque y Aventura</div>
+            <h3>Refugio en la Patagonia</h3>
+            <p>7 días de desconexión total rodeado de senderos orgánicos y lagos cristalinos.</p>
+            <div class="tarjeta-pie">
+                <span class="precio">$450.000</span>
+                <a href="compra.html" class="enlace-hover">Reservar Ahora <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+      </article>
+
+    <article class="tarjeta" id="cardEstocolmo">
+        <div class="tarjeta-imagen img-vuelos"></div>
+        <div class="tarjeta-cuerpo">
+            <div class="tarjeta-etiqueta"><i class="bi bi-airplane"></i> Vuelos Incluidos</div>
+            <h3>Arquitectura en Estocolmo</h3>
+            <p>Una combinación perfecta entre diseño minimalista escandinavo y paisajes serenos.</p>
+            <div class="tarjeta-pie">
+                <span class="precio">$1.200.000</span>
+                <a href="compra.html" class="enlace-hover">Reservar Ahora <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </article>
+
+    <article class="tarjeta" id="cardAuroras">
+        <div class="tarjeta-imagen img-nieve"></div>
+        <div class="tarjeta-cuerpo">
+            <div class="tarjeta-etiqueta"><i class="bi bi-geo-alt"></i> Destino Exótico</div>
+            <h3>Auroras Boreales</h3>
+            <p>Naturaleza en su máxima expresión. 5 noches en cabañas sustentables de cristal.</p>
+            <div class="tarjeta-pie">
+                <span class="precio">$980.000</span>
+                <a href="compra.html" class="enlace-hover">Reservar Ahora <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </article>
+</div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <p>&copy; 2026 Agencia de Turismo "Por el Mundo"</p>
+        </div>
+    </footer>
+     
+    <script src="js/index.js"></script>
+</body>
+</html>

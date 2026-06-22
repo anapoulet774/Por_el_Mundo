@@ -1,0 +1,161 @@
+/* --- Variables de la Guía de Estilo --- */
+:root {
+    --bg-principal: #D5E4CF; /* Verde menta pálido */
+    --color-primario: #499C70; /* Verde bosque medio */
+    --color-contraste: #024053; /* Azul petróleo profundo */
+    --color-hover: #136B69; /* Verde azulado */
+    
+    --font-titulos: 'Libre Baskerville', serif;
+    --font-cuerpo: 'Caudex', serif;
+}
+
+/* --- Reseteo y Estilos Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-principal);
+    font-family: var(--font-cuerpo);
+    color: var(--color-contraste);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titulos);
+    color: var(--color-contraste);
+    margin-bottom: 1rem;
+}
+
+/* --- Cabecera y Pie de página --- */
+.header {
+    background-color: var(--color-contraste);
+    color: #ffffff;
+    padding: 1rem 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header h1 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.reloj {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--bg-principal);
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-contraste);
+    color: white;
+    margin-top: 2rem;
+}
+
+/* --- Requisito B: Diseño Responsive (Mobile First) --- */
+.container {
+    display: flex;
+    flex-direction: column; /* Apilado vertical para móviles */
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+/* --- Formularios --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-cuerpo);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 2px rgba(73, 156, 112, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-family: var(--font-cuerpo);
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-hover);
+}
+
+.error-msg {
+    color: #d9534f;
+    font-size: 0.85rem;
+    display: none;
+    margin-top: 0.3rem;
+}
+
+.resultado-box {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: var(--bg-principal);
+    border-left: 5px solid var(--color-primario);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Destacado dinámico mediante JavaScript */
+.resultado-box.destacado {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+/* Media Query para pantallas grandes (Desktop) */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Diseño en 2 columnas para PC */
+    }
+}
