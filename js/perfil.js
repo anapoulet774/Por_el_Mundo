@@ -85,5 +85,4 @@ formEditarPerfil.addEventListener("submit", (e) => {
     alert("Perfil actualizado correctamente.");
 });
 
-// Cargar perfil al entrar
 cargarPerfil();

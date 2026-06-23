@@ -1,4 +1,4 @@
-* {
+:root {
     --fondo-principal: #D5E4CF;
     --color-primario: #499C70;
     --contraste: #024053;
@@ -34,7 +34,7 @@ a {
     text-decoration: none;
     color: var(--contraste);
     transition: color 0.3s ease;
-    cursor: default; /* para que no cambie el cursor al pasar por links */
+    cursor: pointer; 
 }
 
 .contenedor {
@@ -182,12 +182,9 @@ a {
     margin-bottom: 10px;
 }
 
-/* =========================
-   CARDS / RETÍCULA
-========================= */
 .reticula-tarjetas {
     display: grid;
-    grid-template-columns: 1fr; /* mobile: una debajo de otra */
+    grid-template-columns: 1fr; 
     gap: 30px;
     align-items: start;
 }
@@ -252,9 +249,6 @@ a {
     background-color: var(--interaccion-hover);
 }
 
-/* =========================
-   CARRUSEL
-========================= */
 .carrusel-contenedor {
     position: relative;
     width: 100%;
@@ -353,9 +347,6 @@ a {
     margin-top: 40px;
 }
 
-/* =========================
-   DESKTOP / TABLET GRANDE
-========================= */
 @media (min-width: 900px) {
     .navbar {
         flex-direction: row;
