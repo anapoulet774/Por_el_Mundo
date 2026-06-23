@@ -1,12 +1,12 @@
 * {
-    --fondo-principal: #D5E4CF; 
-    --color-primario: #499C70;  
-    --contraste: #024053;       
-    --interaccion-hover: #136B69; 
-    
+    --fondo-principal: #D5E4CF;
+    --color-primario: #499C70;
+    --contraste: #024053;
+    --interaccion-hover: #136B69;
+
     --fuente-titulos: 'Libre Baskerville', serif;
     --fuente-cuerpo: 'Caudex', serif;
-    
+
     --ancho-maximo: 1000px;
 }
 
@@ -34,6 +34,7 @@ a {
     text-decoration: none;
     color: var(--contraste);
     transition: color 0.3s ease;
+    cursor: default; /* para que no cambie el cursor al pasar por links */
 }
 
 .contenedor {
@@ -67,13 +68,13 @@ a {
 
 .menu {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 15px;
     text-align: center;
 }
 
-
-.btn-primario, .btn-accion {
+.btn-primario,
+.btn-accion {
     display: inline-block;
     background-color: var(--color-primario);
     color: #ffffff;
@@ -90,7 +91,8 @@ a {
     background-color: var(--contraste);
 }
 
-.btn-primario:hover, .btn-accion:hover {
+.btn-primario:hover,
+.btn-accion:hover {
     background-color: var(--interaccion-hover);
     color: #ffffff;
 }
@@ -98,7 +100,6 @@ a {
 .enlace-hover:hover {
     color: var(--interaccion-hover);
 }
-
 
 .hero {
     position: relative;
@@ -138,13 +139,12 @@ a {
     margin-bottom: 30px;
 }
 
-
 .buscador-flotante {
     background-color: #ffffff;
     padding: 15px;
     border-radius: 8px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 15px;
     box-shadow: 0 4px 15px rgba(2, 64, 83, 0.2);
 }
@@ -168,7 +168,6 @@ a {
     width: 100%;
 }
 
-
 .seccion-principal {
     padding: 60px 20px;
 }
@@ -183,29 +182,29 @@ a {
     margin-bottom: 10px;
 }
 
+/* =========================
+   CARDS / RETÍCULA
+========================= */
 .reticula-tarjetas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* mobile: una debajo de otra */
     gap: 30px;
     align-items: start;
 }
 
 .tarjeta {
     width: 100%;
-}
-
-.tarjeta {
+    max-width: 100%;
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
 .tarjeta:hover {
     transform: translateY(-5px);
 }
-
 
 .tarjeta-destino {
     background-color: #ffffff;
@@ -214,7 +213,8 @@ a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
-    width: 100%; 
+    width: 100%;
+    max-width: 100%;
     margin-bottom: 0;
 }
 
@@ -249,9 +249,12 @@ a {
 }
 
 .btn-tarjeta:hover {
-    background-color: var(--hover);
+    background-color: var(--interaccion-hover);
 }
 
+/* =========================
+   CARRUSEL
+========================= */
 .carrusel-contenedor {
     position: relative;
     width: 100%;
@@ -286,7 +289,7 @@ a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(2, 64, 83, 0.6); 
+    background-color: rgba(2, 64, 83, 0.6);
     color: #ffffff;
     border: none;
     width: 36px;
@@ -302,11 +305,16 @@ a {
 }
 
 .carrusel-btn:hover {
-    background-color: var(--hover);
+    background-color: var(--interaccion-hover);
 }
 
-.carrusel-btn.prev { left: 12px; }
-.carrusel-btn.next { right: 12px; }
+.carrusel-btn.prev {
+    left: 12px;
+}
+
+.carrusel-btn.next {
+    right: 12px;
+}
 
 .carrusel-indicadores {
     position: absolute;
@@ -328,14 +336,14 @@ a {
 }
 
 .punto.activo {
-    background-color: var(--color-primario); /* Verde bosque para el estado activo */
+    background-color: var(--color-primario);
     transform: scale(1.2);
 }
+
 .precio {
     font-weight: bold;
     font-size: 1.1rem;
 }
-
 
 .pie-pagina {
     background-color: var(--contraste);
@@ -345,7 +353,10 @@ a {
     margin-top: 40px;
 }
 
-@media (min-width: 768px) {
+/* =========================
+   DESKTOP / TABLET GRANDE
+========================= */
+@media (min-width: 900px) {
     .navbar {
         flex-direction: row;
         justify-content: space-between;
@@ -367,6 +378,7 @@ a {
         width: fit-content;
         margin: 0 auto;
     }
+
     .reticula-tarjetas {
         grid-template-columns: repeat(3, 1fr);
     }
